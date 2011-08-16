@@ -1,0 +1,36 @@
+body {
+	margin:0; padding:0;
+	font-family: sans-serif;
+}
+#header {
+	background: #def;
+	width: 100%;
+}
+#name-title { 
+	margin:0 2px 2px 0; padding: 0; 
+	font-family: sans-serif;
+	font-weight: bold;
+	text-align: right;
+	color: #fff;
+	background: #5ac;
+	text-transform: uppercase;
+	line-height: 1.2ex;
+	width: 30%; /* 8em 
+	float: left;*/
+}
+#lower { 
+	clear: both;
+	text-align: left;
+}
+#lower-left {
+	margin: 2px 2px 0 0; padding: 0;
+	background: #ff8;
+	width: 30%;
+	text-align: right;
+	float: left;
+}
+#lower-right {
+	margin: 2px 0 0 2px; padding: 0;
+	background: #eee;
+	float: left;
+}
