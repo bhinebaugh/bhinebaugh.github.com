@@ -22,8 +22,19 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Use Handlebar to copy and populate templates on this page.</p>
+        <header>
+                <section>
+                <h1>19th Century Naturalists</h1>
+                <p>Use Handlebar to copy and populate templates on this page. 
+                It would be nice to create an object class to fill the templates as well... biographical text as js?</p>
+                </section>
+        </header>
 
+        <article class="clearfix">
+                <section class="content">
+                </section>
+        </article>
+        
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
@@ -31,7 +42,7 @@
         <script id="card-template" type="text/x-handlebars-template">
                 <div class="card">
                         <h2>{{ name }}</h2>
-                        <img src="http://placehold.it/180x220" />
+                        <img src="http://placehold.it/175x220" />
                         <div class="details">
                                 <p>Placeholder text {{ bio }}</p>
                         </div>
@@ -49,7 +60,7 @@
                 source = $('#card-template').html();
                 templ = Handlebars.compile(source);
                 naturalists.forEach( function(n){
-                        $('body').append(templ({'name':n.name}));
+                        $('.content').append(templ({'name':n.name}));
                 });
         </script>
         

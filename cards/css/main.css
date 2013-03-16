@@ -93,15 +93,37 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+body { font-family: Georgia, serif }
+
+section { max-width:960px; margin:0 auto; }
+
+header  {
+    background: rgb(160,115,110);
+    border-bottom: 6px solid rgb(120,75,70);
+    color: rgb(240,248,200);
+    padding: 0.5em 0;
+}
+
+article {
+    background-color: rgb(220,220,180);
+}
 .card {
     background: #f4f4ee;
     border: solid 1px #baa099;
     float: left;
-    margin: 20px;
+    margin: 20px 20px 20px 0;
     padding: 10px 10px;
     width:200px;
 }
+.card:last-child { margin-right:0 }
 
+.card h2 {
+    border-style: double;
+    border-width: 4px 0;
+    color: rgb(120,75,70);
+    margin:0.2em 0;
+    text-align: center;
+}
 .card .details { }
 
 
