@@ -42,7 +42,7 @@
         <script id="card-template" type="text/x-handlebars-template">
                 <div class="card">
                         <h2>{{ name }}</h2>
-                        <img src="http://placehold.it/175x220" />
+                        <img src="img/{{ picture }}" />
                         <div class="details">
                                 <p>Placeholder text {{ bio }}</p>
                         </div>
@@ -52,15 +52,15 @@
         <script type="text/javascript">
                 Naturalist = new Object;
                 var naturalists = [ 
-                        { 'name' : 'Darwin' }, 
-                        { 'name' : 'Hooker' },
-                        { 'name' : 'Huxley' },
-                        { 'name' : 'Wallace' }
+                        { 'name' : 'C. Darwin', 'picture' : 'darwin.jpg' }, 
+                        { 'name' : 'J. Hooker', 'picture' : 'jdhooker.jpg' },
+                        { 'name' : 'T.H. Huxley', 'picture' : 'thhuxley.jpg' },
+                        { 'name' : 'A.R. Wallace', 'picture' : 'alfredrusselwallace.jpg' }
                 ];
                 source = $('#card-template').html();
                 templ = Handlebars.compile(source);
                 naturalists.forEach( function(n){
-                        $('.content').append(templ({'name':n.name}));
+                        $('.content').append(templ({'name':n.name,'picture':n.picture}));
                 });
         </script>
         
