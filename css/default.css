@@ -1,0 +1,25 @@
+/* resets */
+
+body { margin: 0; }
+
+/* header */
+
+.site-header {
+  color: #ddd;
+  height: 25px;
+  background-color: #333;
+  padding: 10px 0;
+}
+a {
+  color: #ddd;
+  text-decoration: none;
+}
+.site-title { float: left; }
+.site-header nav { float: right; }
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.site-title {
+
+}

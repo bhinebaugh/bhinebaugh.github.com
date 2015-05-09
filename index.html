@@ -1,37 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>B. Hinebaugh</title>
-<link rel="stylesheet" href="me2.css" />
-<meta charset="utf-8" >
-</head>
+---
+layout: page-wrapped
+---
 
-<body>
-<div id="header">
-<p id="name">
-<span class="name-letter">B</span>
-<span class="name-letter">y</span>
-<span class="name-letter">r</span>
-<span class="name-letter">o</span>
-<span class="name-letter">n</span>
-</p>
-<p id="surname">
-<span class="name-letter">H</span>
-<span class="name-letter">i</span>
-<span class="name-letter">n</span>
-<span class="name-letter">e</span>
-<span class="name-letter">b</span>
-<span class="name-letter">a</span>
-<span class="name-letter">u</span>
-<span class="name-letter">g</span>
-<span class="name-letter">h</span>
-</p>
-</div>
-<div id="center">
-	<h2>Projects on github &gt;</h2>
-	<div class="project"><img src="staterace.png" /><a href="http://bhinebaugh.github.com/State-Race/index.html"><h3>State Race</h3></a></div>
-	<div class="project"><img src="geo.png" /><a href="http://bhinebaugh.github.com/geologic/index.html"><h3>Geologic Timeline</h3></a></div>
-</div>
-</body>
+<div class="home">
 
-</html>
+  <h1>Latest</h1>
+
+  <section>
+    {% for post in site.posts %}
+      <article>
+        <header>
+          <h2>{{ post.title }}</h2>
+          <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span> |
+          {% for cat in post.categories %}<span>{{ cat }}</span> {% endfor %}
+        </header>
+        {{ post.content }}
+        {% if post.project %}
+          <p><a class="post-link" href="projects/{{ post.project }}">view {{ post.project }} project</a></p>
+        {% else %}
+          <p><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></p>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </section>
+
+  <aside>
+    projects listed here?
+  </aside>
+
+</div>

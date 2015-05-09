@@ -1,0 +1,10 @@
+# Site settings
+title: byron.k
+email: your-email@domain.com
+description: "blog and projects about various topics in science"
+baseurl: ""
+url: "http://yourdomain.com"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
