@@ -1,11 +1,14 @@
 ---
 layout: page
+title: 19th Century Naturalists
 css:
 - normalize
 - main
-js:
-- plugins
-- vendor/handlebars
+js: card.tmpl
+vendor_js:
+- jquery-1.9.0.min
+- modernizr-2.6.2.min
+- handlebars
 ---
 <!--     <head>
         <meta charset="utf-8">
@@ -31,31 +34,28 @@ js:
                 </section>
         </article>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/vendor/handlebars.js"></script>
         <script id="card-template" type="text/x-handlebars-template">
-                <div class="card">
-                        <h2>{{ name }}</h2>
-                        <img src="img/{{ picture }}" />
-                        <div class="details">
-                                <p>Placeholder text {{ bio }}</p>
-                        </div>
-                </div>
+          <div class="card">
+            <h2>{{ name }}</h2>
+            <img src="img/{{ picture }}" />
+            <div class="details">
+                <p>Placeholder text {{ bio }}</p>
+            </div>
+          </div>
         </script>
-        <script src="js/main.js"></script>
         <script type="text/javascript">
-                Naturalist = new Object;
-                var naturalists = [
-                        { 'name' : 'C. Darwin', 'picture' : 'darwin.jpg' },
-                        { 'name' : 'J. Hooker', 'picture' : 'jdhooker.jpg' },
-                        { 'name' : 'T.H. Huxley', 'picture' : 'thhuxley.jpg' },
-                        { 'name' : 'A.R. Wallace', 'picture' : 'alfredrusselwallace.jpg' }
-                ];
-                source = $('#card-template').html();
-                templ = Handlebars.compile(source);
-                naturalists.forEach( function(n){
-                        $('.content').append(templ({'name':n.name,'picture':n.picture}));
-                });
+          var naturalists = [
+                  { 'name' : 'C. Darwin', 'picture' : 'darwin.jpg' },
+                  { 'name' : 'J. Hooker', 'picture' : 'jdhooker.jpg' },
+                  { 'name' : 'T.H. Huxley', 'picture' : 'thhuxley.jpg' },
+                  { 'name' : 'A.R. Wallace', 'picture' : 'alfredrusselwallace.jpg' }
+          ];
+          window.onload = function(){
+            // source = $('#card-template').html();
+            // templ = Handlebars.templates.card;
+            naturalists.forEach( function(n){
+              var card = Handlebars.templates.card(n);
+              $('.content').append(card);
+            });
+          }
         </script>

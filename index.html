@@ -25,7 +25,15 @@ layout: page-wrapped
   </section>
 
   <aside>
-    projects listed here?
+    projects, pages
+    <ul>
+    {% for p in site.pages %}
+      {% assign path = p.url | split:'/' %}
+      {% if path[1] == 'projects' %}
+        <li><a href="{{ p.url }}">go to {{ p.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
   </aside>
 
 </div>

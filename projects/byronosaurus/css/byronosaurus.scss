@@ -1,0 +1,47 @@
+---
+---
+
+body {
+  background: url('/assets/images/soil-profile.png') repeat-x #9e7556;
+}
+
+@media (min-width: 1000px){
+  section {
+    position: absolute;
+    right: 2em;
+    top: 10em;
+    width: 16em;
+  }
+}
+h2 {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+p {
+  opacity: 0;
+  transition: opacity 2s ease;
+  &.first {
+    transition-delay: 2s;
+  }
+  &.second {
+    transition-delay: 3s;
+  }
+}
+
+/* SVG elements */
+svg {
+  width: 100%;
+}
+#outline {
+  opacity: 0;
+  transition: opacity 5s 10s ease;
+}
+#skeleton {
+  // transform: rotate(9deg);
+}
+
+.animate {
+  #outline, h2, p {
+    opacity: 1;
+  }
+}

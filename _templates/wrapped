@@ -1,0 +1,4 @@
+---
+layout: page-wrapped
+title: "{{ title }}"
+---
