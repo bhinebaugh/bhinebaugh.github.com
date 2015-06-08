@@ -8,54 +8,44 @@ js: card.tmpl
 vendor_js:
 - jquery-1.9.0.min
 - modernizr-2.6.2.min
-- handlebars
+- handlebars.runtime
 ---
-<!--     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Cards Demo</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    </head> -->
+<header>
+  <section>
+  <h1>19th Century Naturalists</h1>
+  </section>
+</header>
 
+<article class="clearfix">
+  <section class="content">
+  </section>
+</article>
 
-        <header>
-                <section>
-                <h1>19th Century Naturalists</h1>
-                </section>
-        </header>
+<!-- Used as precompiled template. Source for card.tmpl -->
+<!-- script id="card-template" type="text/x-handlebars-template">
+  <div class="card">
+    <h2>{{ name }}</h2>
+    <img src="img/{{ picture }}" />
+    <div class="details">
+        <p>Placeholder text {{ bio }}</p>
+    </div>
+  </div>
+</script -->
 
-        <article class="clearfix">
-                <section class="content">
-                </section>
-        </article>
-
-        <script id="card-template" type="text/x-handlebars-template">
-          <div class="card">
-            <h2>{{ name }}</h2>
-            <img src="img/{{ picture }}" />
-            <div class="details">
-                <p>Placeholder text {{ bio }}</p>
-            </div>
-          </div>
-        </script>
-        <script type="text/javascript">
-          var naturalists = [
-                  { 'name' : 'C. Darwin', 'picture' : 'darwin.jpg' },
-                  { 'name' : 'J. Hooker', 'picture' : 'jdhooker.jpg' },
-                  { 'name' : 'T.H. Huxley', 'picture' : 'thhuxley.jpg' },
-                  { 'name' : 'A.R. Wallace', 'picture' : 'alfredrusselwallace.jpg' }
-          ];
-          window.onload = function(){
-            // source = $('#card-template').html();
-            // templ = Handlebars.templates.card;
-            naturalists.forEach( function(n){
-              var card = Handlebars.templates.card(n);
-              $('.content').append(card);
-            });
-          }
-        </script>
+<script type="text/javascript">
+  var naturalists = [
+          { 'name' : 'C. Darwin', 'picture' : 'darwin.jpg' },
+          { 'name' : 'J. Hooker', 'picture' : 'jdhooker.jpg' },
+          { 'name' : 'T.H. Huxley', 'picture' : 'thhuxley.jpg' },
+          { 'name' : 'A.R. Wallace', 'picture' : 'alfredrusselwallace.jpg' }
+  ];
+  window.onload = function(){
+    // source = $('#card-template').html();
+    // templ = Handlebars.templates.card;
+    naturalists.forEach( function(n){
+      var card = Handlebars.templates.card(n);
+      $('.content').append(card);
+    });
+  }
+</script>

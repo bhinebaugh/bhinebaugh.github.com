@@ -1,0 +1,108 @@
+---
+---
+/* resets */
+
+body { margin: 0; }
+
+.group:after { /* aka clearfix */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.home > section {
+  @extend .group;
+}
+
+/* typography */
+.site-header, .post-date, h1, h2, a {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+.post-date {
+  color: #ddd;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* header */
+
+.site-header {
+  color: #ddd;
+  a { color: #ddd; }
+  height: 25px;
+  background-color: #333;
+  padding: 1rem 0;
+}
+.site-title { float: left; }
+.site-header nav { float: right; }
+.site-title {
+
+}
+
+.wrap {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 0 2rem;
+  width: 100%;
+}
+article {
+  line-height: 1.4;
+  header {
+    margin-bottom: 1rem;
+  }
+}
+.post-link { float: right; }
+
+a {
+  color: #ccc;
+  text-decoration: none;
+}
+h1 {
+  margin: 2rem 0;
+  span {
+    border-bottom: solid 8px #efefef;
+    padding: 0 0 0.2em;
+  }
+}
+h2 {
+  margin-bottom: 0;
+}
+p {}
+ul {
+  list-style: none;
+  padding-left: 0;
+  li {
+    padding: 0.25rem 0;
+    border-bottom: solid 3px #eee;
+    margin-bottom: 0.5em;
+    transition: background 0.5s linear;
+    &:hover {
+      background-color: #fcfcfc;
+    }
+  }
+}
+
+/* mobile first */
+section {
+}
+
+
+@media ( min-width: 940px ){
+
+  .wrap {
+    padding: 0;
+  }
+
+  section {
+    float: left;
+    margin-right: 2rem;
+    width: 75%;
+  }
+
+  aside {
+    float: left;
+    max-width: 250px;
+  }
+
+}

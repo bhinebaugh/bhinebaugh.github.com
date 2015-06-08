@@ -1,9 +1,9 @@
 # Site settings
-title: byron.k
-email: your-email@domain.com
-description: "blog and projects about various topics in science"
+title: byronosaur
+description: "blog and projects about various topics in biology"
 baseurl: ""
-url: "http://yourdomain.com"
+# email: your-email@domain.com
+# url: "http://yourdomain.com"
 
 # Build settings
 markdown: kramdown

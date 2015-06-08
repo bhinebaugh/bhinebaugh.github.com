@@ -4,19 +4,17 @@ layout: page-wrapped
 
 <div class="home">
 
-  <h1>Latest</h1>
-
   <section>
+    <h1><span>posts</span></h1>
     {% for post in site.posts %}
       <article>
         <header>
           <h2>{{ post.title }}</h2>
-          <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span> |
-          {% for cat in post.categories %}<span>{{ cat }}</span> {% endfor %}
+          <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
         </header>
         {{ post.content }}
         {% if post.project %}
-          <p><a class="post-link" href="projects/{{ post.project }}">view {{ post.project }} project</a></p>
+          <p><a class="post-link" href="projects/{{ post.project }}">&rarr; {{ post.project }} project</a></p>
         {% else %}
           <p><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></p>
         {% endif %}
@@ -25,12 +23,14 @@ layout: page-wrapped
   </section>
 
   <aside>
-    projects, pages
+    <h1><span>projects<span></h1>
     <ul>
+    {% comment %}Create links for every directory in /projects{% endcomment %}
     {% for p in site.pages %}
       {% assign path = p.url | split:'/' %}
-      {% if path[1] == 'projects' %}
-        <li><a href="{{ p.url }}">go to {{ p.title }}</a></li>
+      {% assign depth = path | size %}
+      {% if path[1] == 'projects' and depth == 3 %}
+        <li><a href="{{ p.url }}">{{ p.title }}</a></li>
       {% endif %}
     {% endfor %}
     </ul>
