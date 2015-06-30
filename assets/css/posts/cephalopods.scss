@@ -1,0 +1,46 @@
+---
+---
+html { background: #769E76; }
+body { background: linear-gradient(#CEDAB6, #BFD2BF, #769E76); }
+.cephalopods {
+  background: #A4BEFF;
+  border-radius: 5px;
+  box-shadow: 0 8px 12px rgba(0,0,0,0.3);
+  margin: 1em 0 2em;
+  width: 100%;
+}
+
+.coleoidea div {
+  animation-name: card-in;
+  animation-duration: 1.5s;
+  -webkit-transform-origin: 50% 0%;
+  -moz-transform-origin: 50% 0%;
+  -o-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+}
+
+
+@-webkit-keyframes card-in {
+  0% { -webkit-transform: translateZ( 0px ); }
+  40% { -webkit-transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); z-index: 9999; }
+  100% { opacity: 1; -webkit-transform: translateZ( -400px ); }
+}
+
+@keyframes card-in {
+  // from {
+  //   opacity: 0;
+  //   -webkit-transform: translateY(-50px) rotateZ(45deg);
+  //   transform: translateY(-50px);
+  // }
+  // to {
+  //   opacity: 1;
+  // }
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-200px) scale(1.5);
+  }
+  // 40% { -webkit-transform: translate( -40%, 0 ) scale( 0.8 ) rotateY( 20deg ); z-index: 9999; }
+  100% { opacity: 1; -webkit-transform: translateZ( -400px ); }
+
+}

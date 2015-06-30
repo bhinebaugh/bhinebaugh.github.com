@@ -53,6 +53,14 @@ article {
   }
 }
 .post-link { float: right; }
+.post-header {
+  h1 { margin-bottom: 0; }
+  .meta {
+    color: #888;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 0.9em;
+  }
+}
 
 a {
   color: #ccc;
@@ -94,7 +102,7 @@ section {
     padding: 0;
   }
 
-  section {
+  .home > section {
     float: left;
     margin-right: 2rem;
     width: 75%;

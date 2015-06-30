@@ -8,6 +8,14 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "/assets/css/default.css" | prepend: site.baseurl }}">
+    {% for stylesheet in  page.post_css %}
+      <link rel="stylesheet" href="/assets/css/posts/{{ page.post_css }}.css">
+    {% endfor %}
+    {% if page.style %}
+      <style type="text/css">
+      {{ page.style }}
+      </style>
+    {% endif %}
     {% for stylesheet in page.css %}
       <link rel="stylesheet" href="css/{{ stylesheet }}.css">
     {% endfor %}
