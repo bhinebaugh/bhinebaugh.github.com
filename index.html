@@ -1,5 +1,6 @@
 ---
 layout: page-wrapped
+post_css: front
 ---
 
 <div class="home">
@@ -11,7 +12,7 @@ layout: page-wrapped
         <header>
           <h2>
             {% if post.project %}
-              {{ post.title }}
+              <a href="projects/{{ post.project }}">{{ post.title }}</a>
             {% else %}
               <a href="{{ post.url }}">{{ post.title }}</a>
             {% endif %}
@@ -19,13 +20,13 @@ layout: page-wrapped
           <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
         </header>
         {{ post.excerpt }}
-        <p class="group">
+        <div class="group">
           {% if post.project %}
             <a class="post-link" href="projects/{{ post.project }}">&rarr; {{ post.project }} project</a>
           {% else %}
-            <a class="post-link" href="{{ post.url }}">read more</a>
+            <a class="post-link" href="{{ post.url }}">[read more&hellip;]</a>
           {% endif %}
-        </p>
+        </div>
       </article>
     {% endfor %}
   </section>
