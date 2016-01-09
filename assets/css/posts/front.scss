@@ -1,10 +1,16 @@
 ---
 ---
 
+$accent: #72C1BF;
+
 .group:after { /* aka clearfix */
   content: "";
   display: table;
   clear: both;
+}
+
+body {
+  background: url('/assets/images/grid.png') repeat;
 }
 
 /* typography */
@@ -27,6 +33,10 @@
 article {
   line-height: 1.4;
   margin-bottom: 2.5rem;
+  background: rgba(255,255,255,0.8);
+  border: solid 2px #DEDEDE;
+  box-shadow: 4px 4px 2px rgba(220,220,220,0.5);
+  padding: 0 1.5em 1em;
   header {
     margin-bottom: 1rem;
   }
@@ -44,10 +54,13 @@ article {
 a {
   color: #555;
   text-decoration: none;
+  &:hover {
+    color: $accent;
+  }
 }
 h1 {
   margin: 2rem 0;
-  color: #e2e2e2;
+  color: $accent;
   span {
     border-bottom: solid 8px #efefef;
     padding: 0 0 0.2em;
@@ -62,11 +75,10 @@ ul {
   padding-left: 0;
   li {
     padding: 0.25rem 0;
-    border-bottom: solid 3px #eee;
     margin-bottom: 0.5em;
     transition: background 0.5s linear;
     &:hover {
-      background-color: #fcfcfc;
+      // background-color: #fcfcfc;
     }
   }
 }
