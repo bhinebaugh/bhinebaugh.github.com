@@ -20,3 +20,7 @@ VOLUME /usr/src/app
 # and for convenience, serve on the default http port
 EXPOSE 80
 CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--port", "80"]
+
+# build and run image with something like
+docker run -p 80:80 -v $PWD:/usr/src/app blog
+# docker run -v $PWD:/usr/src/app
