@@ -1,26 +1,34 @@
-#same image as wc rails
-FROM ruby:2.1.10
+# based off of Alpine
+FROM jekyll/jekyll:3
 
-# provide a javascript runtime as required by execjs gem (dependency)
-RUN apt-get update && apt-get install -y --no-install-recommends nodejs
+# NOTE: I moved the Gemfile out of the root to prevent
+# `jekyll serve` from defaulting to reading it and then
+# needlessly trying to install itself and dependencies
 
-# Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+# Already configured in jekyll/jekyll image:
+# WORKDIR /srv/jekyll
+# EXPOSE 4000 80
 
-# When using COPY with more than one source file, the destination must be a directory and end with a /
-COPY Gemfile* ./
-RUN bundle install
+# make available to map to git repo on host
+VOLUME /srv/jekyll
 
-# with static site generation, don't see a need to COPY and bake files into the build
-# COPY . /usr/src/app
-VOLUME /usr/src/app
-
+# ENTRYPOINT ["/bin/sh"]
 # force hosting on '0.0.0.0' rather than 'localhost' to ensure host/vm/container IP alignment
-# and for convenience, serve on the default http port
-EXPOSE 80
-CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--port", "80"]
+CMD ["jekyll", "serve", "--host", "0.0.0.0"]
+# optionally serve on default http port for simpler run command and IP address
+# but may generate permissions error
+# CMD ["jekyll", "serve", "--host", "0.0.0.0", "--port", "80"]
 
-# build and run image with something like
-docker run -p 80:80 -v $PWD:/usr/src/app blog
-# docker run -v $PWD:/usr/src/app
+
+# Usage
+# -----------------------------------------
+
+# 1. build an image using this Dockerfile
+#    `docker build -t blog .`
+
+# 2. run the resulting image from command line,
+#    with contents of current directory mapped to container,
+#    and port translated to default http of 80
+#    `docker run -v $PWD:/srv/jekyll -p 80:4000 blog`
+
+# 3. view in browser at '0.0.0.0' on host
