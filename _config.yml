@@ -8,3 +8,5 @@ baseurl: ""
 # Build settings
 markdown: kramdown
 permalink: pretty
+# don't publish posts with future date in their front matter
+future: false

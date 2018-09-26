@@ -4,6 +4,11 @@
 body {
   background: url('/assets/images/soil-profile.png') repeat-x #9e7556;
 }
+.ground {
+  height: 40px;
+  width: 100%;
+  background: #3b2a10;
+}
 
 @media (min-width: 1000px){
   section {
@@ -13,11 +18,20 @@ body {
     width: 16em;
   }
 }
+
+section {
+  color: #3b2a10;
+	padding: 0.2rem 1.5rem 2rem;
+	background: rgba(255,255,255,0.1);
+	border-radius: .4em;
+}
 h2 {
   opacity: 0;
   transition: opacity 2s ease;
   -webkit-transition: opacity 2s ease;
   -moz-transition: opacity 2s ease;
+	border-bottom: solid 1px;
+	padding-bottom: .2em;
 }
 p {
   opacity: 0;
@@ -35,22 +49,50 @@ p {
   }
 }
 
+/* Timings */
+$outline-delay: 4s;
+$skeleton-delay: 6s;
+$background-delay: 8s;
+$fill-delay: 7s;
+
+body {
+  transition: background 3s $background-delay;
+}
+
 /* SVG elements */
 svg {
   width: 100%;
 }
 #outline {
   opacity: 0;
-  transition: opacity 5s 10s ease;
-  -webkit-transition: opacity 5s 10s ease;
-  -moz-transition: opacity 5s 10s ease;
+  transition: opacity 2s $outline-delay ease, fill 2s $fill-delay ease;
+  -webkit-transition: opacity 2s $outline-delay ease;
+  -moz-transition: opacity 2s $outline-delay ease;
+  animation: restoration 8s ease-in $outline-delay;
+}
+@keyframes restoration {
+  from {
+    opacity: 0;
+    fill: black;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    fill: #a34;
+  }
 }
 #skeleton {
-  // transform: rotate(9deg);
+  transition: opacity 3s $skeleton-delay ease;
 }
 
 .animate {
+  background: green;
   #outline, h2, p {
     opacity: 1;
   }
+  #skeleton {
+    opacity: 0;
+  }
+
 }

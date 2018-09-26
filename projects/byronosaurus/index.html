@@ -2,9 +2,6 @@
 layout: page-wrapped
 title: "Byronosaurus Jaffei"
 css: byronosaurus
-vendor_js:
-- wow.min
-- zepto.min
 ---
 
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -301,15 +298,23 @@ vendor_js:
   </g>
 </g>
 </svg>
+<div class="ground"></div>
 
 <section>
   <h2><i>Byronosaurus jaffei</i></h2>
-  <p class="first">A theropod dinosaur in the troodontid family.</p>
-  <p class="second">It was discovered in 1983 in Mongolia. It was feathered, had a retractable sickle-claw on the second toe, and probably ate small mammals and lizards.</p>
+  <p class="first"><i>Byronosaurus</i> was a theropod dinosaur in the troodontid family from the Late Cretaceous.</p>
+  <p class="second">
+    The first fossil remains of this species were discovered in 1993 in Mongolia. 
+    (Similar to many maniraptorans like Troodon and Velociraptor) It was feathered, had a retractable sickle-claw on the second toe. 
+    many unserrated teeth, unlike most troodontids, more like Archaeopteryx
+    It probably ate small mammals and lizards.
+  </p>
+  <p>Coelurosauria > Maniraptora > Paraves > Troodontidae</p>
 </section>
 
 <script>
-// manipulate the SVG layers
-// or do this in CSS?
-$('body').addClass('animate');
+setTimeout(
+  () => { document.getElementsByTagName('body')[0].classList = 'animate' },
+  1200
+)
 </script>
