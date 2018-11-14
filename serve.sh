@@ -1,2 +1,2 @@
 #! /bin/sh
-docker run -v $PWD:/srv/jekyll -p 80:4000 blog
+docker run --rm -v $PWD:/srv/jekyll -p 80:4000 blog

@@ -4,7 +4,13 @@ title: About
 permalink: /about/
 ---
 
-About aspects of biology, and web technology too.
+This is my site.
+
+A blog and site about aspects of biology, and web technology too.
+
+Some work I've done as well.
+
+Be sociable:
 
 - [![github](/assets/icons/github.svg)](https://github.com/bhinebaugh)
 - [![codepen](/assets/icons/codepen.svg)](https://codepen.io/byronosaurus)
