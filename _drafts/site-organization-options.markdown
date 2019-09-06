@@ -10,6 +10,8 @@ Other posts link to a project, and offer comments about how it was implemented (
 
 Projects and posts are often inspired by a book or article or report. How best to recognize the source? In the post, in the project, in the YAML
 
+Archetypes, special data collections -- config is convoluted.
+
 custom data (yml front matter)
 - subject source (citation)
 - technologies used (libraries, links, inspiration)
