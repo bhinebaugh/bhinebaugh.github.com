@@ -14,16 +14,32 @@ style: |
         max-width: 1400px;
     }
 
+    #page-header {
+        align-items: stretch;
+        box-shadow: 0 3px 1px #0003;
+        color: #555;
+        display: flex;
+        justify-content: flex-start;
+        margin: 4rem auto 7rem;
+    }
+    #page-header h1 {
+        background: #f0e9bf;
+        margin: 0;
+        padding: 1rem 3rem;
+    }
     #toc {
+        align-items: center;
+        background: #fff;
         color: white;
         display: flex;
         flex: 1 0 auto;
         justify-content: space-around;
         list-style: square;
+        margin: 0;
     }
     #toc li {
         list-style: square;
-        color: white;
+        color: #e69393;
     }
     #toc a {
         color: #81828c;
@@ -108,8 +124,9 @@ style: |
     }
     section > header {
         background: #535677;
-        margin: -2rem 2rem 1rem;
-        padding: 2rem;
+        background: url('/assets/images/work/shading-n.png') bottom right no-repeat #535677;
+        margin: -3rem 1.5rem 1.5rem;
+        padding: 1.5rem 2rem;
         box-shadow: 1px 2px 1px;
     }
     .web .images {
@@ -135,6 +152,28 @@ style: |
     .images-flex .wolf { flex: 0 1 auto }
     .images-flex .derrick { flex: 0 1 auto }
     .images-flex .mice-science { flex: 0 1 350px }
+
+    .image-stack {
+        display: flex;
+        flex-direction: column;
+    }
+    .image-pair {
+        align-items: start;
+        display: flex;
+        flex-direction: row;
+    }
+    .images-flex.illustration {
+        justify-content: space-evenly;
+    }
+    .illustrations img {
+        margin-right: 1rem;
+        max-height: 200px;
+        width: auto;
+    }
+    section img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 
     @supports (display: grid) {
 
@@ -167,17 +206,6 @@ style: |
             grid-template-columns: repeat(12, 1fr);
             grid-auto-rows: 100px;
         }
-        .images-flex.illustration {
-            justify-content: space-evenly;
-        }
-        .illustration img {
-            flex: 0 1 500px;
-            width: auto;
-        }
-        section img {
-            width: 100%;
-            margin-bottom: 20px;
-        }
         .logogrid {
             grid-template-columns: 
             /*minmax(100px, max-content)
@@ -191,15 +219,6 @@ style: |
         .tall {
             grid-row: span 2;
         }
-        .image-stack {
-            display: flex;
-            flex-direction: column;
-        }
-        .image-pair {
-            align-items: start;
-            display: flex;
-            flex-direction: row;
-        }
         .grid2 {
             grid-template-columns: repeat(auto-fill, 100px)
         }
@@ -209,7 +228,7 @@ style: |
         }
         
         section {
-            margin: 2rem 0 3.5rem;
+            margin: 4rem 0 7rem;
             background: #fff;
             display: grid;
         }
@@ -250,32 +269,13 @@ style: |
         align-items: center;
     }
     h1, h2 { font-family: "Helvetica Neue", Helvetica, sans-serif }
-    h1 {
-        border-bottom: 5px solid white;
-        text-shadow: 2px 3px 10px #8b8fbf;
-    }
-
-    .wrap > header {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        color: #fff;
-        margin: 4rem auto 2rem;
-        padding-bottom: 0.5em;
-    }
     h2 {
-        color: #979ab9;
+        color: #bbbedd;
         font-size: 27px;
         font-weight: 300;
-        margin: 0 1rem 0 0;
-        padding: 0 1rem 0 0;
+        margin: 0 1.5rem 0 0;
+        padding: 0 1.5rem 0 0;
         border-right: dotted 2px #7075a2;
-    }
-    h2::before {
-        content: '#';
-        margin: 0 0 1em;
-        padding-right: .4rem;
-
     }
     footer h3,
     .web h3 {
@@ -314,7 +314,7 @@ style: |
     }
 ---
 
-<header>
+<header id="page-header">
     <h1>work</h1>
     <ul id="toc">
         <li class="category"><a href="#web-dev">web</a></li>
@@ -326,7 +326,7 @@ style: |
     
 <section id="web-dev">
     <header class="wide">
-        <h2>web design &amp; development</h2>
+        <h2>Web design &amp; development</h2>
         <p class="intro">Projects that I have been involved in: websites and web apps, and development as well as design / UX roles.</p>
     </header>
     <div class="grid web">
@@ -474,31 +474,24 @@ style: |
 
 <section id="illustration">
     <header>
-        <h2>illustration</h2>
+        <h2>Illustration</h2>
         <div class="intro">images created for various web projects</div>
     </header>
-    <div class="images-flex illustration">
+    <div class="illustrations">
         <img class="mice-science" src="/assets/images/work/illustration/science-mouse.jpg" />
         <img class="olympic" src="/assets/images/work/illustration/olympic-biohazard.png" />
         <img class="gnome" src="/assets/images/work/illustration/omics-gnome.jpg" />
         <img class="fish" src="/assets/images/work/illustration/business-fish.jpg" />
-        <img class="rocket" src="/assets/images/work/illustration/rocket2.png" />
         <img class="videophone" src="/assets/images/work/illustration/videophone.jpg" />
-        <img class="wash" src="/assets/images/work/illustration/bundled-wash.jpg" />
         <img class="mouse-hms" src="/assets/images/work/illustration/puzzlemouse_hms.jpg" />
+        <img class="rocket" src="/assets/images/work/illustration/rocket2.png" />
         <img class="derrick" src="/assets/images/work/illustration/derrick.png" />
-        <img class="mice-vid" src="/assets/images/work/illustration/video-mouse.jpg" />
+        <img class="wash" src="/assets/images/work/illustration/bundled-wash.jpg" />
         <img class="racecar" src="/assets/images/work/illustration/racecar2.png" />
         <img class="penguin" src="/assets/images/work/illustration/penguin-aw.png" />
+        <img class="mice-vid" src="/assets/images/work/illustration/video-mouse.jpg" />
     </div>
-</section>
-
-<!-- <section id="illustration">
-    <header>
-        <h2>illustration CSS GRID</h2>
-        <div class="intro">Illustrations I've done, mostly for web</div>
-    </header>
-    <div class="grid illustration">
+    <!-- <div class="grid illustration">
         <div class="fish"><img src="/assets/images/work/illustration/business-fish.jpg" /></div>
         <div class="olympic"><img src="/assets/images/work/illustration/olympic-biohazard.png" /></div>
         <div class="mouse-hms"><img src="/assets/images/work/illustration/puzzlemouse_hms.jpg" /></div>
@@ -513,12 +506,13 @@ style: |
         <div class="penguin"><img src="/assets/images/work/illustration/penguin-aw.png" /></div>
         <div class="mice-vid"><img src="/assets/images/work/illustration/video-mouse.jpg" /></div>
         <div class="mice-science"><img src="/assets/images/work/illustration/science-mouse.jpg" /></div>
-    </div>
-</section> -->
+    </div> -->
+</section>
+
 
 <section id="logos">
     <header>
-        <h2>logos</h2>
+        <h2>Logos</h2>
         <div class="intro">Logo design for organizations, groups, nonprofits, causes</div>
     </header>
     <div class="images-flex">
