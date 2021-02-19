@@ -1,17 +1,97 @@
 ---
 ---
 
+@use "sass:color";
+
+/* Timings */
+$outline-delay: 4s;
+$skeleton-delay: 6s;
+$background-delay: 7s;
+$fill-delay: 7s;
+
+/* Colors */
+$soil-1: #aea23f;
+$soil-2: #a5813d;
+$soil-3: #aa8;
+$soil-4: #774640;
+$soil-5: #a87;
+
+// newer module syntax: color.scale
+$soil-1a: rgba( $soil-1, 0.4 );
+$soil-2a: rgba( $soil-2, 0.4 );
+$soil-3a: rgba( $soil-3, 0.4 );
+$soil-4a: rgba( $soil-4, 0.4 );
+$soil-5a: rgba( $soil-5, 0.4 );
+
 body {
-  background: url('/assets/images/soil-profile.png') repeat-x #9e7556;
+  background:
+  // linear-gradient(
+  //   180deg,
+  //   $soil-1a 0%,
+  //   $soil-2a 11%,
+  //   $soil-3a 13%,
+  //   $soil-4a 20%,
+  //   $soil-5a 22%,
+  //   $soil-3a 23%,
+  //   $soil-1a 33%,
+  //   $soil-5a 40%,
+  // ),
+  repeating-linear-gradient(
+    179deg,
+    $soil-3a 73px,
+    $soil-2a 91px,
+    $soil-1a 113px,
+    $soil-4a 139px,
+    $soil-2a 193px,
+    $soil-3a 203px,
+    $soil-1a 251px,
+    $soil-4a 287px,
+    $soil-3a 299px
+  ),
+  repeating-linear-gradient(
+    180deg,
+    $soil-1a,
+    $soil-2a 11px,
+    $soil-3a 13px,
+    $soil-4a 29px,
+    $soil-5a 53px,
+    $soil-3a 63px,
+    $soil-1a 71px,
+    $soil-5a 87px,
+    $soil-1a 97px
+  ),
+  repeating-linear-gradient(
+    182deg,
+    $soil-1a 51px,
+    $soil-2a 101px,
+    $soil-3a 117px,
+    $soil-4a 129px,
+    $soil-5a 153px,
+    $soil-3a 163px,
+    $soil-1a 171px,
+  ),
+  linear-gradient(
+    175deg,
+    $soil-1 10%,
+    $soil-2 17%,
+    $soil-3 23%,
+    $soil-4 28%,
+    $soil-5 32%,
+    $soil-3 33%,
+    $soil-1 43%,
+    $soil-5 50%,
+  );
+  ;
+  // background: linear-gradient(#aea23f61,#a5813d 20%,#aa82 25%,#774646e0 45%,#aa887778 60%), url('/assets/images/soil-profile.png') repeat-x #9e7556;
+  // multiple patterned backgrounds with transparent portions
+  transition: background-image 3s $background-delay;
 }
-.ground {
-  height: 40px;
-  width: 100%;
-  background: #3b2a10;
-}
+
+.page-content { padding: 50px 0; }
 
 @media (min-width: 1000px){
   section {
+    padding: 2rem;
     position: absolute;
     right: 2em;
     top: 10em;
@@ -20,18 +100,22 @@ body {
 }
 
 section {
-  color: #3b2a10;
-	padding: 0.2rem 1.5rem 2rem;
-	background: rgba(255,255,255,0.1);
-	border-radius: .4em;
+  color: #4f350f;
+	background: rgba(255,255,255,0.3);
+  border-radius: .4em;
+  margin: 2rem;
+  header {
+    border-bottom: solid 1px;
+  }
+  header, div {
+    padding: 0.2rem 1.5rem;
+  }
 }
 h2 {
   opacity: 0;
   transition: opacity 2s ease;
   -webkit-transition: opacity 2s ease;
   -moz-transition: opacity 2s ease;
-	border-bottom: solid 1px;
-	padding-bottom: .2em;
 }
 p {
   opacity: 0;
@@ -49,45 +133,67 @@ p {
   }
 }
 
-/* Timings */
-$outline-delay: 4s;
-$skeleton-delay: 6s;
-$background-delay: 8s;
-$fill-delay: 7s;
-
-body {
-  transition: background 3s $background-delay;
+#forest-bg {
+  background: transparent;
 }
 
 /* SVG elements */
+
 svg {
-  width: 100%;
+  margin: 0 auto;
+	transform: translateX(10%);
+	width: 84%;
 }
-#outline {
+#restored { /* <g> layer within the SVG */
   opacity: 0;
   transition: opacity 2s $outline-delay ease, fill 2s $fill-delay ease;
   -webkit-transition: opacity 2s $outline-delay ease;
   -moz-transition: opacity 2s $outline-delay ease;
-  animation: restoration 8s ease-in $outline-delay;
+  animation: restoration 8s ease-in $outline-delay forwards;
 }
+
+
 @keyframes restoration {
   from {
     opacity: 0;
     fill: black;
   }
-  50% {
-    opacity: 1;
-  }
   to {
-    fill: #a34;
+    opacity: 1;
   }
 }
 #skeleton {
   transition: opacity 3s $skeleton-delay ease;
 }
 
+@keyframes dawn {
+  from {
+    background: transparent;
+  }
+  99% {
+    background: #7fe9e4;
+  }
+  to {
+    background-image: linear-gradient(
+      #6f9aec, #7fe9e4 82%, 
+      #71d92a 85%, #736d0f 94%, #534304 96%
+    );
+    background: url('../woodland.svg') repeat-x;
+  }
+}
+
 .animate {
-  background: green;
+  // .page-content {
+  #forest-bg {
+    // background: #7fe9e4;
+    // transition: background-color 3s $background-delay ease;
+
+    /* not gonna work */
+    // background-image: linear-gradient(#6f9aec, #7fe9e4 82%, #71d92a 85%, #736d0f);
+    // transition: background-image 0 $background-delay; 
+
+    animation: dawn 1s $background-delay forwards;
+  }
   #outline, h2, p {
     opacity: 1;
   }
@@ -96,3 +202,6 @@ svg {
   }
 
 }
+
+/* @keyframes duration | timing-function | delay | 
+iteration-count | direction | fill-mode | play-state | name */
