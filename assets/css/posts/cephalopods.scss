@@ -1,12 +1,21 @@
 ---
 ---
-html { background: #769E76; }
-body { background: linear-gradient(#CEDAB6, #BFD2BF, #769E76); }
+body {
+	background: #565656;
+	background: linear-gradient(to bottom, #565656, #464646);
+	height: 100%;
+}
+.post-header {
+	color: #8cc4e7;
+	padding-bottom: 1em;
+}
+.post-content p {
+	color: #e3e8c9;
+}
 .cephalopods {
-  background: #A4BEFF;
-  border-radius: 5px;
+  background: linear-gradient(to bottom, #a4ccff 4%, #a4beff 9%, #5a69ac 76%);  border-radius: 5px;
   box-shadow: 0 8px 12px rgba(0,0,0,0.3);
-  margin: 1em 0 2em;
+  box-shadow: inset 0 -2px 15px rgba(0, 0, 0, 0.3);  margin: 1em 0 2em;
   width: 100%;
 }
 
