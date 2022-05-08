@@ -12,4 +12,15 @@ layout: page-wrapped
   {{ content }}
   </article>
 
+  {% if page.references %}
+    <div class="post-references">
+      <h2>References</h2>
+      <ul>
+        {% for ref in page.references %}
+        <li><a href={{ ref }} target="_blank">{{ ref }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
 </div>

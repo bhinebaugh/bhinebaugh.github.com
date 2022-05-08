@@ -1,4 +1,8 @@
 #!/bin/bash
+# usage: `./newpost.sh title of the post`
+# a new post will be created in the _posts directory
+# named using the current date and provided title
+# with metadata for date and title filled in
 
 title=""
 for word in $*
@@ -19,5 +23,7 @@ fi
 echo "date: $(date +%Y-%m-%d) $(date +%T) $(date +%z)" >> $FILENAME
 echo "tags: " >> $FILENAME
 echo "categories: " >> $FILENAME
+echo "references: " >> $FILENAME
+# additional metadata options: post_css, style
 
 echo "---" >> $FILENAME
